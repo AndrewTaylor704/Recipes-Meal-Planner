@@ -17,7 +17,6 @@ class RecipesSpider(scrapy.Spider):
     start_urls = []
     for i in range(depth_param):
         start_urls.append("https://www.bbcgoodfood.com/search/?tab=recipe&mealType=dinner&sort=rating&page="+str(i+1))
-    custom_settings = {"FEED_URI": "recipes.csv"}
 
     def parse(self, response):
         linkstr = '/recipes/'
